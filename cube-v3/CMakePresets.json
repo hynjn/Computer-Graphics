@@ -1,0 +1,57 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 25,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "msvc2022-x64",
+      "displayName": "MSVC 2022 x64",
+      "description": "Configure the Qt Cube example with Visual Studio 2022 for 64-bit Windows",
+      "generator": "Visual Studio 17 2022",
+      "architecture": "x64",
+      "binaryDir": "${sourceDir}/out/build/msvc2022-x64",
+      "cacheVariables": {
+        "CMAKE_CXX_STANDARD": "17",
+        "CMAKE_CXX_STANDARD_REQUIRED": "ON",
+        "CMAKE_CXX_EXTENSIONS": "OFF",
+        "CMAKE_PREFIX_PATH": "D:/dev/Qt/6.10.2/msvc2022_64",
+        "Qt6_DIR": "D:/dev/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6"
+      },
+      "environment": {
+        "PATH": "D:/dev/Qt/6.10.2/msvc2022_64/bin;$penv{PATH}"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "build-debug",
+      "displayName": "Build Debug (MSVC 2022 x64)",
+      "configurePreset": "msvc2022-x64",
+      "configuration": "Debug",
+      "targets": [
+        "cube-v3"
+      ]
+    },
+    {
+      "name": "build-relwithdebinfo",
+      "displayName": "Build RelWithDebInfo (MSVC 2022 x64)",
+      "configurePreset": "msvc2022-x64",
+      "configuration": "RelWithDebInfo",
+      "targets": [
+        "cube-v3"
+      ]
+    },
+    {
+      "name": "build-release",
+      "displayName": "Build Release (MSVC 2022 x64)",
+      "configurePreset": "msvc2022-x64",
+      "configuration": "Release",
+      "targets": [
+        "cube-v3"
+      ]
+    }
+  ]
+}
